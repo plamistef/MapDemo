@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,14 +35,39 @@ class ViewController: UIViewController {
     }
     @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
          if sender.state == .ended{
-                   let locationInView = sender.location(in: mapView)
-                   let tappedCoordinate = mapView.convert(locationInView, toCoordinateFrom: mapView)
-                   addAnnotation(coordinate: tappedCoordinate)
+            
+            let locationInView = sender.location(in: self.mapView)
+            let tappedCoordinate = self.mapView.convert(locationInView, toCoordinateFrom: self.mapView)
+                     
+            var name:String!
+            
+            let alert = UIAlertController(title: "Enter pin name", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            alert.addTextField(configurationHandler: { textField in
+                textField.placeholder = "Input the name of your pin..."
+            })
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+
+                 name = alert.textFields?.first?.text //{
+                    print(name!)
+                
+                self.addAnnotation(coordinate: tappedCoordinate, name: name)
+
+               // }
+            }))
+
+            self.present(alert, animated: true)
+            
                }
     }
-    func addAnnotation(coordinate:CLLocationCoordinate2D){
+    
+    
+    func addAnnotation(coordinate:CLLocationCoordinate2D, name: String){
     let annotation = MKPointAnnotation()
     annotation.coordinate = coordinate
+    annotation.title = name
     mapView.addAnnotation(annotation)
 }
 }

@@ -18,8 +18,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+      /*  let marker = MKPointAnnotation() // create an empty marker
+        marker.title = "Go here" // a message on the marker
+        let location = CLLocationCoordinate2D(latitude: 55.7, longitude: 12.5) // Denmark in the world
+        marker.coordinate = location // add the location to this marker
+        mapView.addAnnotation(marker)// is a marker (red), where the user can click for more info
+        */
+        FirebaseRepo.startListener(vc: self)
     }
-    
+    func updateMarkers
+        (markers:[MKPointAnnotation]) {
+        print("updating markers...")
+        // make a loop, iterating through the markers list
+        mapView.removeAnnotations(mapView.annotations) // clear the map
+        mapView.addAnnotations(markers)
+        
+    }
     @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
          if sender.state == .ended{
                    let locationInView = sender.location(in: mapView)

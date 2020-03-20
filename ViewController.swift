@@ -44,7 +44,8 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 
                 name = alert.textFields?.first?.text
-                self.addAnnotation(coordinate: tappedCoordinate, name: name)
+               // self.addAnnotation(coordinate: tappedCoordinate, name: name)
+                FirebaseRepo.addPin(name: name, lat: tappedCoordinate.latitude, lon: tappedCoordinate.longitude)
                 
             }))
             
@@ -53,11 +54,11 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    /*
     func addAnnotation(coordinate:CLLocationCoordinate2D, name: String){
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         annotation.title = name
         mapView.addAnnotation(annotation)
-    }
+    } */
 }

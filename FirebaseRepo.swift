@@ -14,6 +14,7 @@ class FirebaseRepo{
     
     private static let db = Firestore.firestore() // gets the Firebase instance
     private static let path = "locations"
+    private static let collection = db.collection(path)
     
     static func startListener(vc: ViewController){
         print("listener started")
@@ -41,4 +42,12 @@ class FirebaseRepo{
         }
     }
     
+    static func addPin(name:String,lat:Double,lon:Double) {
+        let ref = collection.document()
+        var map = [String:Any]()
+        map["text"] = name
+        map["coordinates"] = GeoPoint(latitude:lat, longitude: lon)
+        ref.setData(map)
+    
+    }
 }

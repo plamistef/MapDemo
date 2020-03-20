@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>638281854025-67l8d0pgc4mo1hshjru34o9ddmptscr7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.638281854025-67l8d0pgc4mo1hshjru34o9ddmptscr7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDG8HUsNZDjmzcc2AJmOonULRQTGz9lkiU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>638281854025</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>plamstef.MapDemo</string>
+	<key>PROJECT_ID</key>
+	<string>mapdemo-2193c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mapdemo-2193c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:638281854025:ios:afd712d364d7632477a398</string>
+	<key>DATABASE_URL</key>
+	<string>https://mapdemo-2193c.firebaseio.com</string>
+</dict>
+</plist>

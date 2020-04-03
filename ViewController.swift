@@ -11,12 +11,14 @@ import MapKit
 
 class ViewController: UIViewController {
     
-    
+    var firebaseManager: FirebaseManager?
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         FirebaseRepo.startListener(vc: self)
+        firebaseManager = FirebaseManager(parentVC: self)
+
     }
     
     func updateMarkers
@@ -61,4 +63,10 @@ class ViewController: UIViewController {
         annotation.title = name
         mapView.addAnnotation(annotation)
     } */
+    
+    
+    @IBAction func signOutClicked(_ sender: Any) {
+        firebaseManager?.signOut()
+        self.performSegue(withIdentifier: "backToLogin", sender: nil)
+    }
 }
